@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+section{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+.slider{
+    color: #fff;
+    height: 100%;
+    width: 100%;
+}
+.slide{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+    background-position: center;
+    background-size: cover;
+    transform: translateX(100%);
+}
+.slide.active{
+    transform: translateX(0%);
+    z-index: 3;
+}
+.slide.top{
+    transition: .3s ease transform;
+    z-index: 3;
+}
+.slide::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(17, 17, 17, 0.329);
+    z-index: -1;
+}
+.slide1{
+    background-image: url(img/slide1.jpg);
+}
+.slide2{
+    background-image: url(img/slide2.jpg);
+}
+.slide3{
+    background-image: url(img/slide3.jpg);
+}
+.slide4{
+    background-image: url(img/slide4.jpg);
+}
+.slide5{
+    background-image: url(img/slide4.jpg);
+}
+/* buttons style */
+.buttons{
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    z-index: 5;
+    display: flex;
+    flex-direction: row-reverse;
+    height: auto;
+    width: auto;
+    transform: translateX(-50%);
+}
+.buttons div{
+    padding: 0 15px;
+    cursor: pointer;
+    pointer-events: all;
+    background: #fff;
+    color: #000;
+    margin: 10px;
+    font-size: 30px;
+}
+/* dots style */
+.dots{
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background: #f7f7f75d; */
+    /* margin-bottom: 3px; */
+    /* display: flex;
+    padding: 7px; */
+}
+.dots .dot{
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    /* background: #fff; */
+    border: 1px solid #fff;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: .3s ease width;
+}
+.dots .dot.active{
+    background: #fff;
+    border: none;
+    width: 30px;
+}
